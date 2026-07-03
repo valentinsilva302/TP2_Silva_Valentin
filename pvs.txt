@@ -1,0 +1,2 @@
+  PV         VG     Fmt  Attr PSize  PFree 
+  /dev/sdc1  vg_web lvm2 a--  <5.00g <2.00g

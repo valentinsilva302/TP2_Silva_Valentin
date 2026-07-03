@@ -1,0 +1,53 @@
+    1  git clone https://github.com/valentinsilva302/TP2_Silva_Valentin.git
+    2  cd TP2_Silva_Valentin
+    3  sudo fdisk -l
+    4  sudo fdisk /dev/sdc
+    5  lsblk
+    6  sudo fdisk /dev/sdc
+    7  sudo fdisk /dev/sdb
+    8  sudo fdisk /dev/sdc
+    9  sudo fdisk /dev/sdd
+   10  sudo mkswap /dev/sdd1
+   11  sudo swapon /dev/sdd1
+   12  free -h
+   13  sudo pvcreate /dev/sdc1
+   14  sudo vgcreate vg_web /dev/sdc1
+   15  sudo lvcreate -n lv_web1 -L 1G vg_web
+   16  sudo lvcreate -n lv_web2 -L 1G vg_web
+   17  sudo lvcreate -n lv_web3 -L 1G vg_web
+   18  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   19  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   20  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   21  lsblk
+   22  sudo mkdir /mnt/web1
+   23  sudo mkdir /mnt/web2
+   24  sudo mkdir /mnt/web3
+   25  sudo mount /dev/mapper/vg_web-lv_web1 /mnt/web1
+   26  sudo mount /dev/mapper/vg_web-lv_web2 /mnt/web2
+   27  sudo mount /dev/mapper/vg_web-lv_web3 /mnt/web3
+   28  lsblk
+   29  sudo blkid
+   30  sudo nano /etc/fstab
+   31  echo "UUID=edbb7fbb-3428-4849-a80b-5738937bfa9a /mnt/web1 ext4 defaults 0 2" | sudo tee -a /etc/fstab
+   32  tail/etc/fstab
+   33  tail /etc/fstab
+   34  echo "UUID=f0a091c5-53c3-4f4a-bc0d-d62f401a0ee0 /mnt/web2 ext4 defaults 0 2" | sudo tee -a /etc/fstab
+   35  echo "UUID=ec7853eb-829f-43e6-b6fa-40e2c78f16eb /mnt/web3 ext4 defaults 0 2" | sudo tee -a /etc/fstab
+   36  tail /etc/fstab
+   37  sudo mount -a
+   38  lsblk
+   39  sudo blkid /dev/sdd1
+   40  "UUID=47339871-6597-4425-9d09-7d64cc43a902 none swap sw 0 0" | sudo tee -a /etc/fstab
+   41  echo UUID=47339871-6597-4425-9d09-7d64cc43a902 none swap sw 0 0 | sudo tee -a /etc/fstab
+   42  tail /etc/fstab
+   43  ls
+   44  pwd
+   45  ls -la
+   46  ls -a
+   47  git status
+   48  /home/vagrant/TP2_silva_valentin
+   49  cd ~/TP2_Silva_Valentin
+   50  sudo pvs > pvs.txt
+   51  sudo vgs > vgs.txt
+   52  sudo lvs > lvs.txt
+   53  history > historial_lvm.txt
